@@ -38,7 +38,7 @@ def conversion_dependency_tree_to_graph(dependency_tree):
         else:
             head_index = word.head.i + 1
         #current_edge = ((i + 1, head_index, {'dep': word.dep_}))
-        current_edge = ((head_index,i + 1,  {'dep': word.dep_}))
+        current_edge = ((head_index, i + 1,  {'dep': word.dep_}))
         list_of_edges.append(current_edge)
         dict_of_nodes[i + 1] = {'word': word.text,
                                 'pos': word.pos_,
