@@ -31,13 +31,13 @@ class SimplePathExtractor:
                     for one_simple_path in all_simple_paths:
                         str_representation_of_path = ''
                         for index, one_step in enumerate(one_simple_path[:-1]):
-                            str_representation_of_path += graph_instance.node[one_step].get(self.node_attr, '')
+                            str_representation_of_path += graph_instance.nodes[one_step].get(self.node_attr, '')
                             str_representation_of_path += '_' + graph_instance.get_edge_data(one_simple_path[index],
                                                                                              one_simple_path[
                                                                                                  index + 1])[
                                 'dep'].lower()
                             str_representation_of_path += '_'
-                        str_representation_of_path += graph_instance.node[one_simple_path[-1]].get(self.node_attr, '')
+                        str_representation_of_path += graph_instance.nodes[one_simple_path[-1]].get(self.node_attr, '')
                         total_paths.append(str_representation_of_path)
         return total_paths
 
